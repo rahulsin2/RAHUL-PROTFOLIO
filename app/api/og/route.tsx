@@ -75,7 +75,7 @@ export function GET(request: Request) {
         >
           {title}
         </div>
-        <div style={{ display: "flex", fontSize: 22, color: "#8b8b93" }}>sourabh singh</div>
+        <div style={{ display: "flex", fontSize: 22, color: "#8b8b93" }}>rahul singh</div>
       </div>
     ),
     { width: 1200, height: 630 },
