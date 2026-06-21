@@ -23,6 +23,7 @@ export const seedProfile: Profile = {
 export const seedStartups: Startup[] = [
   { id: "1", name: "Oras", tagline: "Building something real — check it out", url: "https://www.tryoras.com", emoji: "🚀", logo: "/oras-logo.png", mrr: "", sort_order: 1 },
   { id: "2", name: "Vidora", tagline: "Do your best work with Vidora", url: "#", emoji: "📱", logo: "/vidora-logo.png", mrr: "In Progress", sort_order: 2 },
+  { id: "3", name: "StarHQ", tagline: "Your startup's command center", url: "https://starhq.app", emoji: "⭐", logo: "https://starhq.app/favicon.ico", mrr: "", sort_order: 3 },
 ];
 
 export const seedTech: Tech[] = [
