@@ -19,9 +19,23 @@ function prettyDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
 }
 
-export function ContributionGraph({ data }: { data: Contributions }) {
+export function ContributionGraph({ data, username }: { data: Contributions; username?: string }) {
   const [tip, setTip] = useState<Tip>(null);
-  if (!data.weeks.length) return null;
+
+  if (!data.weeks.length) {
+    if (!username) return null;
+    return (
+      <div className="overflow-x-auto">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`https://ghchart.rshah.org/22d3ee/${username}`}
+          alt={`${username} GitHub contributions`}
+          className="min-w-full rounded"
+          style={{ filter: "invert(0) opacity(0.9)" }}
+        />
+      </div>
+    );
+  }
 
   const monthLabels: { col: number; label: string }[] = [];
   let lastMonth = -1;

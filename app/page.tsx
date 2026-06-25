@@ -76,9 +76,9 @@ export default async function Home() {
 
         {/* ---- RIGHT: scrolling content ---- */}
         <div className="flex min-w-0 flex-col">
-          {contributions.weeks.length > 0 && (
+          {(contributions.weeks.length > 0 || profile.github_username) && (
             <Section label="Contributions" n={(n += 1)}>
-              <ContributionGraph data={contributions} />
+              <ContributionGraph data={contributions} username={profile.github_username} />
             </Section>
           )}
 
