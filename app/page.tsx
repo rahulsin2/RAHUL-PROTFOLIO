@@ -31,9 +31,9 @@ function Section({ label, children, id, n }: { label: string; id?: string; n: nu
 }
 
 export default async function Home() {
-  const [{ profile, startups, projects, experience }, contributions, posts] = await Promise.all([
-    getPublicContent(),
-    getContributions(),
+  const { profile, startups, projects, experience } = await getPublicContent();
+  const [contributions, posts] = await Promise.all([
+    getContributions(profile.github_username),
     getPublishedPosts(),
   ]);
   const latestPosts = posts.slice(0, 3);

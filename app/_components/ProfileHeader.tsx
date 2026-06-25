@@ -30,8 +30,15 @@ export function ProfileHeader({ profile }: { profile: Profile }) {
               className="relative h-16 w-16 rounded-full object-cover ring-2 ring-background transition-transform duration-500 group-hover:scale-[1.04]"
             />
           ) : (
-            <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-card text-sm font-medium text-muted ring-2 ring-background">
-              {initials || "·"}
+            <div className="relative flex h-16 w-16 items-center justify-center rounded-full ring-2 ring-background overflow-hidden"
+              style={{ background: "radial-gradient(circle at 40% 35%, #1a2a3a 0%, #0d1520 100%)" }}
+            >
+              <span
+                className="text-lg font-bold tracking-tight select-none"
+                style={{ background: "linear-gradient(135deg, #38bdf8 0%, #22d3ee 60%, #67e8f9 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+              >
+                {initials || "·"}
+              </span>
             </div>
           )}
           {/* live status dot */}
